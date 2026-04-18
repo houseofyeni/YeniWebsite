@@ -6,7 +6,7 @@ import Problem from "@/components/Problem";
 import Benefits from "@/components/Benefits";
 import Flavours from "@/components/Flavours";
 import Ingredients from "@/components/Ingredients";
-import PatternInterrupt from "@/components/Patterninterrupt";
+import PatternInterrupt from "@/components/PatternInterrupt";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Waitlist from "@/components/Waitlist";

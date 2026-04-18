@@ -17,8 +17,8 @@ const FLAVOURS = [
     color: "#E6F0DC",
     accent: "#4A7A3A",
     emoji: "🍋",
-    tag: "Wind-down",
-    desc: "Bright citrus, warming ginger, sacred tulsi. Your gut's favourite bedtime ritual.",
+    tag: "4–7 PM",
+    desc: "Bright citrus, warming ginger, sacred tulsi. Your gut's favourite daily ritual.",
     image: "/hero-lemon.png",
   },
   {
@@ -27,8 +27,8 @@ const FLAVOURS = [
     color: "#F5EAE0",
     accent: "#B07040",
     emoji: "🌿",
-    tag: "After dinner",
-    desc: "Tangy kokum, earthy jeera. The Indian digestive wisdom your dadi swore by.",
+    tag: "7–9 PM",
+    desc: "Tangy kokum, earthy jeera. Indian digestive wisdom — now in 30 seconds.",
     image: "/hero-kokum.png",
   },
   {
@@ -37,8 +37,8 @@ const FLAVOURS = [
     color: "#EBE0F5",
     accent: "#6B35B0",
     emoji: "🫐",
-    tag: "Evening sip",
-    desc: "Mixed berry burst, lemonade fizz. Universally loved, impossibly refreshing.",
+    tag: "9–11 PM",
+    desc: "Mixed berry, lemonade fizz. The one everyone in your house tries to steal.",
     image: "/hero-berry.png",
   },
 ];
@@ -65,18 +65,18 @@ export default function Hero({ onCtaClick }) {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden px-5 md:px-6"
       style={{
         background: `radial-gradient(ellipse 100% 80% at 60% 20%, ${f.color}99 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 10% 90%, ${f.color}55 0%, transparent 50%), #FAF8F4`,
         transition: "background 0.8s cubic-bezier(0.22,1,0.36,1)",
       }}
     >
-      {/* Animated ambient orbs */}
+      {/* Orbs */}
       <div
         className="orb-float absolute pointer-events-none"
         style={{
-          width: "700px",
-          height: "700px",
+          width: "600px",
+          height: "600px",
           top: "-15%",
           right: "-12%",
           background: `radial-gradient(circle, ${f.color} 0%, transparent 65%)`,
@@ -88,8 +88,8 @@ export default function Hero({ onCtaClick }) {
       <div
         className="orb-float-slow absolute pointer-events-none"
         style={{
-          width: "500px",
-          height: "500px",
+          width: "400px",
+          height: "400px",
           bottom: "-10%",
           left: "-8%",
           background: `radial-gradient(circle, ${f.color}88 0%, transparent 60%)`,
@@ -99,44 +99,7 @@ export default function Hero({ onCtaClick }) {
         }}
       />
 
-      {/* Botanical SVG decoration — top right */}
-      <svg
-        className="absolute top-24 right-8 opacity-[0.07] pointer-events-none hidden lg:block"
-        width="180"
-        height="180"
-        viewBox="0 0 180 180"
-      >
-        <circle
-          cx="90"
-          cy="90"
-          r="85"
-          stroke={f.accent}
-          strokeWidth="1"
-          fill="none"
-          strokeDasharray="8 4"
-        />
-        <circle
-          cx="90"
-          cy="90"
-          r="60"
-          stroke={f.accent}
-          strokeWidth="0.5"
-          fill="none"
-        />
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
-          <ellipse
-            key={i}
-            cx="90"
-            cy="32"
-            rx="6"
-            ry="14"
-            fill={f.accent}
-            transform={`rotate(${deg} 90 90)`}
-          />
-        ))}
-      </svg>
-
-      {/* Spectrum top line */}
+      {/* Top spectrum line */}
       <div
         className="absolute top-0 left-0 right-0 h-[2px] pointer-events-none"
         style={{
@@ -145,13 +108,13 @@ export default function Hero({ onCtaClick }) {
         }}
       />
 
-      <div className="max-w-6xl mx-auto w-full pt-32 pb-16 md:pt-40 md:pb-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* LEFT: Copy */}
+      <div className="max-w-6xl mx-auto w-full pt-28 pb-16 md:pt-36 md:pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+          {/* LEFT */}
           <div>
             {/* Eyebrow */}
             <div
-              className="inline-flex items-center gap-2 mb-7"
+              className="inline-flex items-center gap-2 mb-5"
               style={mounted ? fadeUp(80) : { opacity: 0 }}
             >
               <span
@@ -162,42 +125,51 @@ export default function Hero({ onCtaClick }) {
                 className="font-mono text-xs tracking-widest uppercase"
                 style={{ color: f.accent, transition: "color 0.5s" }}
               >
-                Your Evening Ritual · India&apos;s First
+                Built for Indian Guts · India&apos;s First
               </span>
             </div>
 
             {/* Headline */}
             <h1
-              className="font-display font-light leading-[1.02] text-charcoal mb-5"
+              className="font-display font-light leading-[1.02] text-charcoal mb-4"
               style={{
-                fontSize: "clamp(3rem, 7vw, 5.8rem)",
+                fontSize: "clamp(2.6rem, 7vw, 5.4rem)",
                 letterSpacing: "-0.03em",
                 ...(mounted ? fadeUp(160) : { opacity: 0 }),
               }}
             >
-              Wind Down.
+              Bloated Again?
               <br />
               <em
                 className="italic"
                 style={{ color: f.accent, transition: "color 0.5s ease" }}
               >
-                Gut Reset.
+                Your Gut Needs
               </em>
-              <br />
-              Wake Up Light.
+              <br />a Daily Reset.
             </h1>
 
             {/* Sub */}
             <p
-              className="font-body text-lg font-light leading-relaxed max-w-md mb-9"
+              className="font-body text-base md:text-lg font-light leading-relaxed max-w-md mb-3"
               style={{
                 color: "#5A534A",
                 ...(mounted ? fadeUp(260) : { opacity: 0 }),
               }}
             >
-              Yeni is India&apos;s first probiotic + hydration sachet crafted
-              for your evening — anytime from 4 PM to 11 PM. One tear, one sip,
-              your gut does the rest overnight.
+              Kokum, jeera & live probiotics — in one sachet. Mix in water.
+              Drink in 30 seconds. Your gut, finally working.
+            </p>
+
+            {/* Brand stamp */}
+            <p
+              className="font-mono text-xs mb-8 tracking-wide"
+              style={{
+                color: f.accent,
+                ...(mounted ? fadeUp(300) : { opacity: 0 }),
+              }}
+            >
+              Built for Indian meals. Made for how we actually eat.
             </p>
 
             {/* CTAs */}
@@ -207,7 +179,7 @@ export default function Hero({ onCtaClick }) {
             >
               <button
                 onClick={onCtaClick}
-                className="group inline-flex items-center justify-center gap-2 font-body font-semibold px-8 py-4 rounded-full text-base transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 font-body font-semibold px-7 py-4 rounded-full text-base transition-all duration-300 w-full sm:w-auto"
                 style={{
                   background: f.accent,
                   color: "#FAF8F4",
@@ -223,11 +195,11 @@ export default function Hero({ onCtaClick }) {
                   e.currentTarget.style.boxShadow = `0 8px 28px ${f.accent}50`;
                 }}
               >
-                🌿 Claim Free Samples
+                🌿 Start My 7-Day Gut Reset
               </button>
               <a
                 href="#flavours"
-                className="inline-flex items-center justify-center gap-2 font-body font-normal px-7 py-4 rounded-full text-base border transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 font-body font-normal px-6 py-4 rounded-full text-sm border transition-all duration-300 w-full sm:w-auto text-center"
                 style={{
                   borderColor: `${f.accent}50`,
                   color: f.accent,
@@ -238,9 +210,20 @@ export default function Hero({ onCtaClick }) {
               </a>
             </div>
 
+            {/* Trust line */}
+            <p
+              className="font-mono text-xs mt-4"
+              style={{
+                color: "#9CA3AF",
+                ...(mounted ? fadeUp(400) : { opacity: 0 }),
+              }}
+            >
+              🌿 No sugar · No pills · Results in 7 days
+            </p>
+
             {/* Social proof */}
             <div
-              className="flex items-center gap-5 mt-9 pt-7 border-t"
+              className="flex items-center gap-4 mt-7 pt-7 border-t"
               style={{
                 borderColor: `${f.accent}20`,
                 ...(mounted ? fadeUp(460) : { opacity: 0 }),
@@ -271,20 +254,19 @@ export default function Hero({ onCtaClick }) {
             </div>
           </div>
 
-          {/* RIGHT: Interactive sachet + flavour picker */}
+          {/* RIGHT — product image */}
           <div
-            className="flex flex-col items-center gap-8"
+            className="flex flex-col items-center gap-6 mt-4 lg:mt-0"
             style={
               mounted
                 ? { animation: "heroFadeIn 0.9s ease 400ms both" }
                 : { opacity: 0 }
             }
           >
-            {/* Real product image */}
             <div
               style={{
-                width: "260px",
-                height: "340px",
+                width: "min(240px, 70vw)",
+                height: "min(320px, 90vw)",
                 animation: mounted
                   ? "sachetFloat 5s ease-in-out infinite"
                   : "none",
@@ -303,10 +285,8 @@ export default function Hero({ onCtaClick }) {
                   objectFit: "cover",
                   borderRadius: "24px",
                   boxShadow: `0 32px 80px ${f.accent}35, 0 8px 24px rgba(0,0,0,0.12)`,
-                  transition: "box-shadow 0.5s ease",
                 }}
               />
-              {/* Flavour glow behind image */}
               <div
                 style={{
                   position: "absolute",
@@ -320,15 +300,15 @@ export default function Hero({ onCtaClick }) {
               />
             </div>
 
-            {/* Flavour picker pills */}
-            <div className="flex gap-3 flex-wrap justify-center">
+            {/* Flavour picker */}
+            <div className="flex gap-2 flex-wrap justify-center">
               {FLAVOURS.map((fl, i) => (
                 <button
                   key={i}
                   onClick={() => switchFlavour(i)}
-                  className="font-body text-sm font-medium px-4 py-2 rounded-full border transition-all duration-300"
+                  className="font-body text-xs font-medium px-3 py-2 rounded-full border transition-all duration-300"
                   style={{
-                    background: activeFlavour === i ? fl.accent : `${fl.color}`,
+                    background: activeFlavour === i ? fl.accent : fl.color,
                     color: activeFlavour === i ? "#FAF8F4" : fl.accent,
                     borderColor: fl.accent,
                     transform: activeFlavour === i ? "scale(1.06)" : "scale(1)",
@@ -343,11 +323,11 @@ export default function Hero({ onCtaClick }) {
               ))}
             </div>
 
-            {/* Flavour descriptor */}
+            {/* Flavour card */}
             <div
-              className="text-center max-w-xs px-6 py-4 rounded-2xl"
+              className="text-center max-w-xs w-full px-5 py-4 rounded-2xl"
               style={{
-                background: `${f.color}`,
+                background: f.color,
                 border: `1px solid ${f.accent}25`,
                 opacity: isTransitioning ? 0 : 1,
                 transition: "all 0.3s ease",
@@ -360,7 +340,7 @@ export default function Hero({ onCtaClick }) {
                 {f.tag}
               </p>
               <p
-                className="font-display text-lg font-light italic"
+                className="font-display text-base font-light italic"
                 style={{ color: f.accent }}
               >
                 {f.name} {f.sub}
@@ -378,18 +358,17 @@ export default function Hero({ onCtaClick }) {
 
       {/* Scroll cue */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ opacity: 0.45 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        style={{ opacity: 0.4 }}
       >
         <span className="font-mono text-xs tracking-widest uppercase text-warm">
           Scroll
         </span>
         <div
-          className="w-px h-10"
+          className="w-px h-8"
           style={{
             background: `linear-gradient(to bottom, ${f.accent}, transparent)`,
             animation: "heroPulse 2.2s ease-in-out infinite",
-            transition: "background 0.5s",
           }}
         />
       </div>

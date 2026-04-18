@@ -6,7 +6,7 @@ const steps = [
     num: "01",
     action: "Tear",
     icon: "✂️",
-    desc: "Anytime from 4–11 PM, grab a Yeni sachet. One pull on the easy-tear notch — works one-handed, on the couch, in the dark.",
+    desc: "One pull on the notch. No scissors. Works one-handed, on the couch, in the dark.",
     color: "#4A7A3A",
     bg: "#E6F0DC",
   },
@@ -14,7 +14,7 @@ const steps = [
     num: "02",
     action: "Mix",
     icon: "💧",
-    desc: "Pour into 200ml water. Watch the colour bloom. Stir for 10 seconds. That's your evening ritual beginning.",
+    desc: "Pour into 200ml water. Stir 10 seconds. Watch the colour bloom. That's your reset beginning.",
     color: "#B07040",
     bg: "#F5EAE0",
   },
@@ -22,10 +22,17 @@ const steps = [
     num: "03",
     action: "Sip",
     icon: "🌙",
-    desc: "Sip slowly while you wind down. Probiotics + adaptogens work overnight. Wake up lighter, less bloated, more you.",
+    desc: "Drink slowly. Let the probiotics work overnight. Thirty seconds. That's your entire gut routine.",
     color: "#6B35B0",
     bg: "#EBE0F5",
   },
+];
+
+const timeline = [
+  { day: "Day 1", result: "Feel lighter within the hour." },
+  { day: "Day 5", result: "Bloating visibly down." },
+  { day: "Week 2", result: "Digestion becomes clockwork." },
+  { day: "Month 1", result: "People notice the difference." },
 ];
 
 export default function HowItWorks() {
@@ -34,17 +41,13 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       ref={ref}
-      style={{
-        background: "#F5F2ED",
-        padding: "96px 0",
-        position: "relative",
-        overflow: "hidden",
-      }}
+      style={{ background: "#FAF8F4", padding: "80px 0" }}
     >
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 20px" }}>
+        {/* Header */}
         <div
-          style={{ textAlign: "center", marginBottom: "72px" }}
           className="reveal"
+          style={{ textAlign: "center", marginBottom: "52px" }}
         >
           <span
             style={{
@@ -62,162 +65,245 @@ export default function HowItWorks() {
           <h2
             style={{
               fontFamily: "'Cormorant Garamond',serif",
-              fontSize: "clamp(2.4rem,5vw,4rem)",
+              fontSize: "clamp(2rem,5vw,3.5rem)",
               fontWeight: 300,
               color: "#1A1A18",
               lineHeight: 1.08,
               letterSpacing: "-0.025em",
-              margin: 0,
             }}
           >
-            Three steps to your
+            Three steps.
             <br />
             <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
-              happiest gut.
+              Thirty seconds.
             </em>
           </h2>
         </div>
 
-        {/* Steps — large horizontal layout */}
+        {/* Steps */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
-            gap: "24px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "16px",
+            marginBottom: "52px",
           }}
         >
           {steps.map((s, i) => (
             <div
               key={i}
               className={`reveal reveal-delay-${i + 1}`}
-              style={{ position: "relative" }}
+              style={{
+                background: "#fff",
+                borderRadius: "24px",
+                padding: "32px 28px",
+                border: "1px solid #F0EDE8",
+                position: "relative",
+                overflow: "hidden",
+              }}
             >
-              {/* Connector line */}
-              {i < 2 && (
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "48px",
-                    right: "-12px",
-                    width: "24px",
-                    height: "1px",
-                    background: "linear-gradient(90deg, #C8D7C0, transparent)",
-                    zIndex: 2,
-                    display: "none",
-                  }}
-                  className="hidden lg:block"
-                />
-              )}
-              <div
+              <span
                 style={{
-                  background: "#fff",
-                  borderRadius: "28px",
-                  padding: "40px 32px",
-                  border: "1px solid rgba(0,0,0,0.05)",
-                  height: "100%",
-                  position: "relative",
-                  overflow: "hidden",
+                  position: "absolute",
+                  top: "-16px",
+                  right: "16px",
+                  fontFamily: "serif",
+                  fontSize: "90px",
+                  fontWeight: 900,
+                  color: `${s.color}06`,
+                  lineHeight: 1,
                 }}
               >
-                {/* Step number bg */}
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "-16px",
-                    right: "20px",
-                    fontFamily: "serif",
-                    fontSize: "100px",
-                    fontWeight: 900,
-                    color: `${s.color}06`,
-                    lineHeight: 1,
-                  }}
-                >
-                  {s.num}
-                </span>
-                {/* Icon circle */}
-                <div
-                  style={{
-                    width: "64px",
-                    height: "64px",
-                    borderRadius: "20px",
-                    background: s.bg,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "28px",
-                    marginBottom: "24px",
-                  }}
-                >
-                  {s.icon}
-                </div>
-                <span
-                  style={{
-                    fontFamily: "'DM Mono',monospace",
-                    fontSize: "10px",
-                    letterSpacing: "0.15em",
-                    textTransform: "uppercase",
-                    color: s.color,
-                    display: "block",
-                    marginBottom: "8px",
-                  }}
-                >
-                  {s.num}
-                </span>
-                <h3
-                  style={{
-                    fontFamily: "'Cormorant Garamond',serif",
-                    fontSize: "2rem",
-                    fontWeight: 400,
-                    color: "#1A1A18",
-                    marginBottom: "12px",
-                    lineHeight: 1,
-                  }}
-                >
-                  {s.action}
-                </h3>
+                {s.num}
+              </span>
+              <div
+                style={{
+                  width: "56px",
+                  height: "56px",
+                  borderRadius: "18px",
+                  background: s.bg,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "26px",
+                  marginBottom: "20px",
+                }}
+              >
+                {s.icon}
+              </div>
+              <span
+                style={{
+                  fontFamily: "'DM Mono',monospace",
+                  fontSize: "10px",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: s.color,
+                  display: "block",
+                  marginBottom: "6px",
+                }}
+              >
+                {s.num}
+              </span>
+              <h3
+                style={{
+                  fontFamily: "'Cormorant Garamond',serif",
+                  fontSize: "1.8rem",
+                  fontWeight: 400,
+                  color: "#1A1A18",
+                  marginBottom: "10px",
+                  lineHeight: 1,
+                }}
+              >
+                {s.action}
+              </h3>
+              <p
+                style={{
+                  fontFamily: "'DM Sans',sans-serif",
+                  fontSize: "13px",
+                  color: "#5A534A",
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                {s.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* When to drink */}
+        <div
+          className="reveal"
+          style={{
+            background: "#F5F2ED",
+            borderRadius: "20px",
+            padding: "28px 24px",
+            marginBottom: "32px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'DM Mono',monospace",
+              fontSize: "11px",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: "#8AAB7E",
+              marginBottom: "14px",
+            }}
+          >
+            When to Drink
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            {[
+              {
+                time: "Morning (best)",
+                note: "Empty stomach, 20 min before breakfast.",
+              },
+              {
+                time: "After meals",
+                note: "Feeling heavy? Have it 30 min after eating.",
+              },
+              {
+                time: "4–11 PM",
+                note: "Your gut's golden window. Yeni was built for this.",
+              },
+            ].map((w, i) => (
+              <div key={i} style={{ flex: "1 1 200px" }}>
                 <p
                   style={{
                     fontFamily: "'DM Sans',sans-serif",
-                    fontSize: "14px",
-                    color: "#5A534A",
-                    lineHeight: 1.75,
-                    margin: 0,
+                    fontSize: "13px",
+                    fontWeight: 600,
+                    color: "#1A1A18",
+                    margin: "0 0 3px",
                   }}
                 >
-                  {s.desc}
+                  {w.time}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans',sans-serif",
+                    fontSize: "12px",
+                    color: "#5A534A",
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {w.note}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div
+          className="reveal grid grid-cols-2 md:grid-cols-4"
+          style={{ gap: "10px", marginBottom: "28px" }}
+        >
+          {timeline.map((t, i) => (
+            <div
+              key={i}
+              style={{
+                background: "#fff",
+                borderRadius: "14px",
+                padding: "16px",
+                border: "1px solid #F0EDE8",
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "'DM Mono',monospace",
+                  fontSize: "10px",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "#8AAB7E",
+                  margin: "0 0 6px",
+                }}
+              >
+                {t.day}
+              </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans',sans-serif",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  color: "#1A1A18",
+                  margin: 0,
+                  lineHeight: 1.4,
+                }}
+              >
+                {t.result}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Time callout */}
-        <div
-          className="reveal"
-          style={{ marginTop: "40px", textAlign: "center" }}
-        >
+        <div className="reveal" style={{ textAlign: "center" }}>
           <div
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "12px",
+              gap: "10px",
               background: "#1A1A18",
               borderRadius: "100px",
-              padding: "14px 28px",
+              padding: "12px 24px",
             }}
           >
-            <span style={{ fontSize: "20px" }}>🌙</span>
+            <span style={{ fontSize: "18px" }}>🌙</span>
             <p
               style={{
                 fontFamily: "'DM Sans',sans-serif",
-                fontSize: "14px",
+                fontSize: "13px",
                 color: "rgba(255,255,255,0.8)",
                 margin: 0,
               }}
             >
-              Best between{" "}
-              <strong style={{ color: "#8AAB7E" }}>4 PM – 11 PM daily</strong> —
-              30 seconds to your best night&apos;s rest.
+              Best at{" "}
+              <strong style={{ color: "#8AAB7E" }}>4–11 PM daily.</strong> Once
+              a day. Every day. That&apos;s the whole system.
             </p>
           </div>
         </div>

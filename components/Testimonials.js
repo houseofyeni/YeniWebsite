@@ -3,51 +3,66 @@ import { useReveal } from "./useReveal";
 
 const testimonials = [
   {
-    name: "Priya M.",
+    name: "Meghna R.",
     city: "Bangalore",
-    avatar: "P",
+    avatar: "M",
     color: "#4A7A3A",
     bg: "#E6F0DC",
-    text: "I've tried every probiotic out there. Yeni is the first one I've actually stuck to — because it tastes incredible and takes zero effort.",
+    text: "Tried jeera water, probiotics, isabgol. Nothing stuck. With Yeni, I've been consistent for 3 weeks. Bloating is down. I haven't taken an antacid in 12 days. That's a first.",
     tag: "Lemon Ginger Tulsi",
     stars: 5,
+    signal: "12 days antacid-free",
   },
   {
-    name: "Rahul S.",
+    name: "Arjun K.",
     city: "Mumbai",
-    avatar: "R",
+    avatar: "A",
     color: "#B07040",
     bg: "#F5EAE0",
-    text: "The Kokum Jeera tastes like something my mum would make — but with probiotics in it. My digestion has visibly improved in three weeks.",
+    text: "Was skeptical. Tried Kokum Jeera anyway. By day 4, the post-lunch food coma was gone. I'm more productive in the afternoon than I've been in years.",
     tag: "Kokum + Jeera",
     stars: 5,
+    signal: "Results by day 4",
   },
   {
-    name: "Ananya K.",
+    name: "Priya S.",
     city: "Delhi",
-    avatar: "A",
+    avatar: "P",
     color: "#6B35B0",
     bg: "#EBE0F5",
-    text: "Berry Lemonade is dangerously good. Started taking it for gut health but now I just look forward to it every evening. Bloating is almost gone.",
+    text: "I have PCOS. Bloating is constant. After 10 days on Yeni, I look less puffy and feel less heavy after dinner. I don't fully understand the science but my body does.",
     tag: "Berry Lemonade",
     stars: 5,
+    signal: "Noticeable in 10 days",
   },
   {
-    name: "Karthik V.",
-    city: "Chennai",
-    avatar: "K",
+    name: "Rohan M.",
+    city: "Hyderabad",
+    avatar: "R",
     color: "#4A7A3A",
     bg: "#E6F0DC",
-    text: "Game changer for travel. I carry sachets everywhere. No more skipping my gut routine just because I'm not home.",
+    text: "I travel every week. Gut routine always breaks. Now I throw 2 sachets in my laptop bag. Had one on the flight last Monday. Felt fine the next morning. That never happens.",
     tag: "All 3 Flavours",
     stars: 5,
+    signal: "Works while travelling",
+  },
+  {
+    name: "Nandita T.",
+    city: "Pune",
+    avatar: "N",
+    color: "#B07040",
+    bg: "#F5EAE0",
+    text: "My mum makes jeera water when I'm home. Yeni tastes better and I've been consistent for 5 weeks. Mum's verdict: better than her jeera water.",
+    tag: "Lemon Ginger Tulsi",
+    stars: 5,
+    signal: "5 weeks consistent",
   },
 ];
 
-function Stars() {
+function Stars({ count }) {
   return (
     <div style={{ display: "flex", gap: "2px" }}>
-      {[...Array(5)].map((_, i) => (
+      {Array.from({ length: count }).map((_, i) => (
         <span key={i} style={{ color: "#F59E0B", fontSize: "12px" }}>
           ★
         </span>
@@ -64,51 +79,16 @@ export default function Testimonials() {
       ref={ref}
       style={{
         background: "#0F1409",
-        padding: "96px 0",
+        padding: "80px 0",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Scattered botanical circles */}
-      {[
-        { x: "5%", y: "10%", s: 120 },
-        { x: "90%", y: "80%", s: 80 },
-        { x: "80%", y: "5%", s: 60 },
-      ].map((c, i) => (
-        <svg
-          key={i}
-          style={{
-            position: "absolute",
-            left: c.x,
-            top: c.y,
-            opacity: 0.04,
-            pointerEvents: "none",
-          }}
-          width={c.s}
-          height={c.s}
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="47"
-            stroke="#8AAB7E"
-            strokeWidth="1.5"
-            fill="none"
-            strokeDasharray="5 3"
-          />
-        </svg>
-      ))}
-
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 20px" }}>
+        {/* Header */}
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginBottom: "60px",
-          }}
           className="reveal"
+          style={{ textAlign: "center", marginBottom: "48px" }}
         >
           <span
             style={{
@@ -117,37 +97,36 @@ export default function Testimonials() {
               letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "#8AAB7E",
-              marginBottom: "16px",
+              display: "block",
+              marginBottom: "14px",
             }}
           >
-            Early Reviewers
+            Real People. Actual Results.
           </span>
           <h2
             style={{
               fontFamily: "'Cormorant Garamond',serif",
-              fontSize: "clamp(2.4rem,5vw,4rem)",
+              fontSize: "clamp(2rem,5vw,3.5rem)",
               fontWeight: 300,
               color: "#FAF8F4",
               lineHeight: 1.08,
               letterSpacing: "-0.025em",
-              textAlign: "center",
-              margin: 0,
             }}
           >
-            Real people.
+            Real stomachs.
             <br />
             <em style={{ fontStyle: "italic", color: "#8AAB7E" }}>
-              Real guts.
+              Real outcomes.
             </em>
           </h2>
         </div>
 
-        {/* Grid */}
+        {/* Testimonial grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
-            gap: "16px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "12px",
           }}
         >
           {testimonials.map((t, i) => (
@@ -156,11 +135,10 @@ export default function Testimonials() {
               className={`reveal reveal-delay-${(i % 2) + 1}`}
               style={{
                 background: "rgba(255,255,255,0.04)",
-                borderRadius: "24px",
-                padding: "28px",
+                borderRadius: "20px",
+                padding: "24px",
                 border: "1px solid rgba(255,255,255,0.07)",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.3s ease",
+                transition: "all 0.25s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "rgba(255,255,255,0.07)";
@@ -173,21 +151,22 @@ export default function Testimonials() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
+              {/* Header */}
               <div
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "flex-start",
-                  marginBottom: "16px",
+                  marginBottom: "14px",
                 }}
               >
                 <div
-                  style={{ display: "flex", alignItems: "center", gap: "12px" }}
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
                 >
                   <div
                     style={{
-                      width: "40px",
-                      height: "40px",
+                      width: "38px",
+                      height: "38px",
                       borderRadius: "50%",
                       background: t.color,
                       display: "flex",
@@ -196,6 +175,7 @@ export default function Testimonials() {
                       color: "#fff",
                       fontWeight: 700,
                       fontSize: "14px",
+                      flexShrink: 0,
                     }}
                   >
                     {t.avatar}
@@ -204,7 +184,7 @@ export default function Testimonials() {
                     <p
                       style={{
                         fontFamily: "'DM Sans',sans-serif",
-                        fontSize: "14px",
+                        fontSize: "13px",
                         fontWeight: 600,
                         color: "#FAF8F4",
                         margin: 0,
@@ -215,7 +195,7 @@ export default function Testimonials() {
                     <p
                       style={{
                         fontFamily: "'DM Mono',monospace",
-                        fontSize: "11px",
+                        fontSize: "10px",
                         color: "rgba(255,255,255,0.35)",
                         margin: 0,
                       }}
@@ -224,61 +204,89 @@ export default function Testimonials() {
                     </p>
                   </div>
                 </div>
-                <Stars />
+                <Stars count={t.stars} />
               </div>
+
+              {/* Quote */}
               <p
                 style={{
                   fontFamily: "'DM Sans',sans-serif",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   color: "rgba(255,255,255,0.65)",
-                  lineHeight: 1.75,
+                  lineHeight: 1.7,
                   fontStyle: "italic",
-                  marginBottom: "16px",
+                  marginBottom: "14px",
                 }}
               >
                 &ldquo;{t.text}&rdquo;
               </p>
-              <span
+
+              {/* Bottom row */}
+              <div
                 style={{
-                  fontFamily: "'DM Mono',monospace",
-                  fontSize: "10px",
-                  letterSpacing: "0.1em",
-                  padding: "5px 12px",
-                  borderRadius: "100px",
-                  border: `1px solid ${t.color}50`,
-                  color: t.color,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  gap: "8px",
                 }}
               >
-                {t.tag}
-              </span>
+                <span
+                  style={{
+                    fontFamily: "'DM Mono',monospace",
+                    fontSize: "10px",
+                    letterSpacing: "0.08em",
+                    padding: "4px 10px",
+                    borderRadius: "100px",
+                    border: `1px solid ${t.color}50`,
+                    color: t.color,
+                  }}
+                >
+                  {t.tag}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "'DM Mono',monospace",
+                    fontSize: "10px",
+                    color: "#8AAB7E",
+                    letterSpacing: "0.06em",
+                  }}
+                >
+                  → {t.signal}
+                </span>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Trust bar */}
+        {/* Trust stats */}
         <div
           className="reveal"
           style={{
-            marginTop: "56px",
+            marginTop: "52px",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
             gap: "0",
             borderTop: "1px solid rgba(255,255,255,0.07)",
-            paddingTop: "48px",
+            paddingTop: "40px",
           }}
         >
           {[
             { val: "1,200+", label: "On the Waitlist", color: "#8AAB7E" },
             { val: "4.9★", label: "Avg. Rating", color: "#F59E0B" },
             { val: "94%", label: "Would Recommend", color: "#8AAB7E" },
-            { val: "3 wks", label: "To Notice Results", color: "#C8956E" },
+            {
+              val: "7 days",
+              label: "Average to First Result",
+              color: "#C8956E",
+            },
           ].map((s, i) => (
             <div
               key={i}
               style={{
                 textAlign: "center",
-                padding: "0 36px",
+                padding: "0 28px",
                 borderRight:
                   i < 3 ? "1px solid rgba(255,255,255,0.07)" : "none",
               }}
@@ -286,7 +294,7 @@ export default function Testimonials() {
               <p
                 style={{
                   fontFamily: "'Cormorant Garamond',serif",
-                  fontSize: "2.4rem",
+                  fontSize: "2.2rem",
                   fontWeight: 300,
                   color: s.color,
                   margin: "0 0 4px",

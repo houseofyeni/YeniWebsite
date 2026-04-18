@@ -9,12 +9,12 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
       ref={ref}
       style={{
         background: "#FAF8F4",
-        padding: "96px 24px",
+        padding: "80px 20px",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Big botanical ring */}
+      {/* Botanical ring */}
       <svg
         style={{
           position: "absolute",
@@ -24,23 +24,23 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
           opacity: 0.04,
           pointerEvents: "none",
         }}
-        width="700"
-        height="700"
-        viewBox="0 0 700 700"
+        width="600"
+        height="600"
+        viewBox="0 0 600 600"
       >
         <circle
-          cx="350"
-          cy="350"
-          r="340"
+          cx="300"
+          cy="300"
+          r="290"
           stroke="#4A7A3A"
           strokeWidth="1"
           fill="none"
-          strokeDasharray="12 6"
+          strokeDasharray="10 6"
         />
         <circle
-          cx="350"
-          cy="350"
-          r="250"
+          cx="300"
+          cy="300"
+          r="210"
           stroke="#4A7A3A"
           strokeWidth="0.5"
           fill="none"
@@ -49,12 +49,12 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
           (deg, i) => (
             <ellipse
               key={i}
-              cx="350"
+              cx="300"
               cy="18"
-              rx="10"
-              ry="24"
+              rx="8"
+              ry="20"
               fill="#4A7A3A"
-              transform={`rotate(${deg} 350 350)`}
+              transform={`rotate(${deg} 300 300)`}
             />
           ),
         )}
@@ -62,7 +62,7 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
 
       <div
         style={{
-          maxWidth: "680px",
+          maxWidth: "600px",
           margin: "0 auto",
           textAlign: "center",
           position: "relative",
@@ -77,7 +77,7 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
             textTransform: "uppercase",
             color: "#B07040",
             display: "block",
-            marginBottom: "20px",
+            marginBottom: "18px",
           }}
         >
           Free Samples · Limited to 500 Packs
@@ -86,33 +86,49 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
         <h2
           style={{
             fontFamily: "'Cormorant Garamond',serif",
-            fontSize: "clamp(2.8rem,6vw,5rem)",
+            fontSize: "clamp(2.2rem,5vw,4rem)",
             fontWeight: 300,
             color: "#1A1A18",
             lineHeight: 1.05,
             letterSpacing: "-0.03em",
-            marginBottom: "20px",
+            marginBottom: "16px",
           }}
         >
-          Your evening ritual
+          You&apos;ve known something
           <br />
-          starts{" "}
-          <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>tonight.</em>
+          was off.{" "}
+          <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
+            Now do something about it.
+          </em>
         </h2>
 
         <p
           style={{
             fontFamily: "'DM Sans',sans-serif",
-            fontSize: "17px",
+            fontSize: "16px",
             color: "#5A534A",
             lineHeight: 1.7,
-            marginBottom: "44px",
-            maxWidth: "480px",
-            margin: "0 auto 44px",
+            marginBottom: "12px",
+            maxWidth: "460px",
+            margin: "0 auto 12px",
           }}
         >
-          Try all 3 Yeni flavours free — delivered to your door. No payment, no
-          commitment. Just your gut feeling about us.
+          Try all 3 Yeni flavours — completely free. We ship it. You drink it.
+          <br />
+          <strong style={{ color: "#1A1A18" }}>
+            You&apos;ll feel the difference before you expect it.
+          </strong>
+        </p>
+
+        <p
+          style={{
+            fontFamily: "'DM Sans',sans-serif",
+            fontSize: "13px",
+            color: "#8AAB7E",
+            marginBottom: "32px",
+          }}
+        >
+          Indian-made. Clinically formulated. Actually drinkable.
         </p>
 
         {/* Big CTA */}
@@ -122,7 +138,7 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
             display: "inline-flex",
             alignItems: "center",
             gap: "10px",
-            padding: "18px 40px",
+            padding: "16px 36px",
             borderRadius: "100px",
             border: "none",
             cursor: "pointer",
@@ -133,9 +149,12 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
             background: "linear-gradient(135deg, #4A7A3A 0%, #2E4D24 100%)",
             boxShadow: "0 12px 40px rgba(74,122,58,0.35)",
             transition: "all 0.3s ease",
+            width: "100%",
+            maxWidth: "400px",
+            justifyContent: "center",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-3px)";
+            e.currentTarget.style.transform = "translateY(-2px)";
             e.currentTarget.style.boxShadow =
               "0 18px 50px rgba(74,122,58,0.45)";
           }}
@@ -145,11 +164,11 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
               "0 12px 40px rgba(74,122,58,0.35)";
           }}
         >
-          <span style={{ fontSize: "20px" }}>🌿</span>
-          Claim My Free Sample Kit
+          <span style={{ fontSize: "18px" }}>🌿</span>
+          My Gut Needs This — Send My Free Kit
           <svg
-            width="18"
-            height="18"
+            width="16"
+            height="16"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -163,19 +182,20 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
           </svg>
         </button>
 
-        <div style={{ marginTop: "20px" }}>
+        {/* Urgency */}
+        <div style={{ marginTop: "16px" }}>
           <KitsUrgencyLine />
         </div>
 
-        {/* Feature pills */}
+        {/* Trust pills */}
         <div
           style={{
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            gap: "10px",
-            marginTop: "44px",
-            paddingTop: "36px",
+            gap: "8px",
+            marginTop: "28px",
+            paddingTop: "28px",
             borderTop: "1px solid #EDE8E0",
           }}
         >
@@ -183,16 +203,16 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
             "🍋 All 3 flavours",
             "🚚 Free shipping",
             "💳 No card required",
-            "⏱️ Ships in 3–5 days",
+            "✋ No subscription",
           ].map((f) => (
             <span
               key={f}
               style={{
                 fontFamily: "'DM Sans',sans-serif",
-                fontSize: "13px",
+                fontSize: "12px",
                 color: "#5A534A",
                 background: "#F0EDE8",
-                padding: "8px 16px",
+                padding: "7px 14px",
                 borderRadius: "100px",
               }}
             >
@@ -206,14 +226,15 @@ const Waitlist = forwardRef(function Waitlist({ onCtaClick }, ref) {
             fontFamily: "'DM Mono',monospace",
             fontSize: "10px",
             color: "#C0B8AD",
-            marginTop: "20px",
+            marginTop: "16px",
             letterSpacing: "0.06em",
           }}
         >
-          No spam · No payment · WhatsApp notification only
+          No spam · No commitment · WhatsApp notification only
         </p>
       </div>
     </section>
   );
 });
+
 export default Waitlist;

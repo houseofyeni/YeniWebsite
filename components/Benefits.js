@@ -3,41 +3,74 @@ import { useReveal } from "./useReveal";
 
 const benefits = [
   {
-    n: "01",
-    title: "Supports Gut Health",
-    desc: "Live probiotics restore microbiome balance — less discomfort, better digestion, consistently.",
-    icon: "🦠",
-    accent: "#4A7A3A",
-    bg: "#E6F0DC",
-  },
-  {
-    n: "02",
-    title: "Reduces Bloating",
-    desc: "Targeted strains chosen specifically to ease that heavy, bloated feeling after meals.",
-    icon: "✨",
-    accent: "#B07040",
-    bg: "#F5EAE0",
-  },
-  {
-    n: "03",
-    title: "Deep Hydration",
-    desc: "Electrolytes replenish what you lose through the day — water alone doesn't cut it.",
-    icon: "💧",
-    accent: "#4A7A3A",
-    bg: "#E6F0DC",
-  },
-  {
-    n: "04",
-    title: "Effortless Daily Habit",
-    desc: "30-second ritual. No prep, no pills to forget, no fridge required. Just tear, mix, sip.",
     icon: "⚡",
+    label: "Lighter after meals.",
+    sub: "In 30 minutes.",
+    accent: "#4A7A3A",
+    bg: "#E6F0DC",
+    num: "01",
+  },
+  {
+    icon: "📉",
+    label: "Bloating down.",
+    sub: "By day 5.",
     accent: "#B07040",
     bg: "#F5EAE0",
+    num: "02",
+  },
+  {
+    icon: "🔥",
+    label: "Less acidity.",
+    sub: "Without antacids.",
+    accent: "#4A7A3A",
+    bg: "#E6F0DC",
+    num: "03",
+  },
+  {
+    icon: "💨",
+    label: "Less gas.",
+    sub: "Less discomfort. Daily.",
+    accent: "#B07040",
+    bg: "#F5EAE0",
+    num: "04",
+  },
+  {
+    icon: "🔋",
+    label: "No afternoon crash.",
+    sub: "Real energy post-lunch.",
+    accent: "#4A7A3A",
+    bg: "#E6F0DC",
+    num: "05",
+  },
+  {
+    icon: "😴",
+    label: "Fall asleep easy.",
+    sub: "Without gut discomfort.",
+    accent: "#B07040",
+    bg: "#F5EAE0",
+    num: "06",
+  },
+  {
+    icon: "🔄",
+    label: "Digestion on track.",
+    sub: "Even on bad eating days.",
+    accent: "#4A7A3A",
+    bg: "#E6F0DC",
+    num: "07",
+  },
+  {
+    icon: "🌿",
+    label: "30-second habit.",
+    sub: "You'll actually keep.",
+    accent: "#B07040",
+    bg: "#F5EAE0",
+    num: "08",
   },
 ];
 
-export default function Benefits() {
+export default function Benefits({ onCtaClick }) {
   const ref = useReveal();
+
   return (
     <section
       id="benefits"
@@ -49,53 +82,45 @@ export default function Benefits() {
         overflow: "hidden",
       }}
     >
-      {/* Botanical BG motif */}
+      {/* Subtle botanical bg */}
       <svg
         style={{
           position: "absolute",
-          right: "-60px",
+          right: "-80px",
           top: "50%",
           transform: "translateY(-50%)",
-          opacity: 0.04,
+          opacity: 0.03,
           pointerEvents: "none",
         }}
-        width="400"
-        height="400"
-        viewBox="0 0 400 400"
+        width="500"
+        height="500"
+        viewBox="0 0 500 500"
       >
         <circle
-          cx="200"
-          cy="200"
-          r="190"
+          cx="250"
+          cy="250"
+          r="240"
           stroke="#4A7A3A"
           strokeWidth="1"
           fill="none"
-          strokeDasharray="10 6"
+          strokeDasharray="12 6"
         />
         {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
           <ellipse
             key={i}
-            cx="200"
+            cx="250"
             cy="18"
-            rx="12"
-            ry="28"
+            rx="14"
+            ry="32"
             fill="#4A7A3A"
-            transform={`rotate(${deg} 200 200)`}
+            transform={`rotate(${deg} 250 250)`}
           />
         ))}
       </svg>
 
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 20px" }}>
         {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "8px",
-            marginBottom: "64px",
-          }}
-          className="reveal"
-        >
+        <div className="reveal" style={{ marginBottom: "60px" }}>
           <span
             style={{
               fontFamily: "'DM Mono',monospace",
@@ -103,54 +128,80 @@ export default function Benefits() {
               letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "#8AAB7E",
+              display: "block",
+              marginBottom: "16px",
             }}
           >
-            What Yeni Does For You
+            What Changes. Fast.
           </span>
-          <h2
+          <div
             style={{
-              fontFamily: "'Cormorant Garamond',Georgia,serif",
-              fontSize: "clamp(2.4rem,5vw,4rem)",
-              fontWeight: 300,
-              color: "#1A1A18",
-              lineHeight: 1.08,
-              letterSpacing: "-0.025em",
-              margin: 0,
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              gap: "20px",
             }}
           >
-            Every sip working
-            <br />
-            <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
-              overnight.
-            </em>
-          </h2>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond',serif",
+                fontSize: "clamp(2.2rem,5vw,4rem)",
+                fontWeight: 300,
+                color: "#1A1A18",
+                lineHeight: 1.05,
+                letterSpacing: "-0.025em",
+                margin: 0,
+              }}
+            >
+              You'll feel like you —
+              <br />
+              <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
+                without the gut problem.
+              </em>
+            </h2>
+            <p
+              style={{
+                fontFamily: "'DM Sans',sans-serif",
+                fontSize: "14px",
+                color: "#5A534A",
+                maxWidth: "260px",
+                lineHeight: 1.6,
+                margin: 0,
+              }}
+            >
+              Real outcomes. Not wellness poetry. Each benefit tied to what your
+              gut actually does.
+            </p>
+          </div>
         </div>
 
-        {/* Benefits grid */}
+        {/* Benefits — large featured cards */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
             gap: "16px",
+            marginBottom: "16px",
           }}
         >
-          {benefits.map((b, i) => (
+          {benefits.slice(0, 4).map((b, i) => (
             <div
               key={i}
               className={`reveal reveal-delay-${i + 1}`}
               style={{
                 background: "#fff",
-                borderRadius: "24px",
-                padding: "36px 30px",
+                borderRadius: "28px",
+                padding: "36px 32px",
                 border: "1px solid #F0EDE8",
-                transition: "all 0.3s ease",
-                cursor: "default",
                 position: "relative",
                 overflow: "hidden",
+                transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)",
+                cursor: "default",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = `0 20px 48px ${b.accent}18`;
+                e.currentTarget.style.transform = "translateY(-6px)";
+                e.currentTarget.style.boxShadow = `0 24px 56px ${b.accent}15`;
                 e.currentTarget.style.borderColor = `${b.accent}30`;
               }}
               onMouseLeave={(e) => {
@@ -159,60 +210,175 @@ export default function Benefits() {
                 e.currentTarget.style.borderColor = "#F0EDE8";
               }}
             >
-              {/* Background number */}
+              {/* Ghost number */}
               <span
                 style={{
                   position: "absolute",
-                  top: "-10px",
-                  right: "16px",
-                  fontFamily: "serif",
-                  fontSize: "80px",
+                  top: "-8px",
+                  right: "20px",
+                  fontFamily: "'Cormorant Garamond',serif",
+                  fontSize: "120px",
                   fontWeight: 700,
-                  color: `${b.accent}08`,
+                  color: `${b.accent}07`,
                   lineHeight: 1,
                   pointerEvents: "none",
+                  userSelect: "none",
                 }}
               >
-                {b.n}
+                {b.num}
               </span>
+
+              {/* Icon circle */}
               <div
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "16px",
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "20px",
                   background: b.bg,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "22px",
-                  marginBottom: "20px",
+                  fontSize: "28px",
+                  marginBottom: "24px",
+                  boxShadow: `0 4px 16px ${b.accent}15`,
                 }}
               >
                 {b.icon}
               </div>
+
+              {/* Number label */}
+              <span
+                style={{
+                  fontFamily: "'DM Mono',monospace",
+                  fontSize: "10px",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: `${b.accent}80`,
+                  display: "block",
+                  marginBottom: "8px",
+                }}
+              >
+                {b.num}
+              </span>
+
+              {/* Benefit text */}
               <h3
                 style={{
                   fontFamily: "'Cormorant Garamond',serif",
-                  fontSize: "1.5rem",
+                  fontSize: "1.9rem",
                   fontWeight: 500,
                   color: "#1A1A18",
-                  marginBottom: "10px",
-                  lineHeight: 1.2,
+                  margin: "0 0 6px",
+                  lineHeight: 1.1,
                 }}
               >
-                {b.title}
+                {b.label}
               </h3>
               <p
                 style={{
                   fontFamily: "'DM Sans',sans-serif",
                   fontSize: "14px",
-                  color: "#5A534A",
-                  lineHeight: 1.7,
+                  color: b.accent,
                   margin: 0,
+                  fontWeight: 500,
                 }}
               >
-                {b.desc}
+                {b.sub}
               </p>
+
+              {/* Accent bottom bar */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "3px",
+                  background: `linear-gradient(90deg, ${b.accent}40, ${b.accent}15, transparent)`,
+                  borderRadius: "0 0 28px 28px",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Second row — compact horizontal cards */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "12px",
+            marginBottom: "40px",
+          }}
+        >
+          {benefits.slice(4).map((b, i) => (
+            <div
+              key={i}
+              className={`reveal reveal-delay-${i + 1}`}
+              style={{
+                background: b.bg,
+                borderRadius: "20px",
+                padding: "24px 22px",
+                border: `1px solid ${b.accent}15`,
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                transition: "all 0.3s ease",
+                cursor: "default",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = `0 16px 40px ${b.accent}18`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <span style={{ fontSize: "26px" }}>{b.icon}</span>
+                <span
+                  style={{
+                    fontFamily: "'DM Mono',monospace",
+                    fontSize: "10px",
+                    color: `${b.accent}60`,
+                    letterSpacing: "0.1em",
+                  }}
+                >
+                  {b.num}
+                </span>
+              </div>
+
+              <div>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans',sans-serif",
+                    fontSize: "15px",
+                    fontWeight: 700,
+                    color: b.accent,
+                    margin: "0 0 3px",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {b.label}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans',sans-serif",
+                    fontSize: "12px",
+                    color: "#5A534A",
+                    margin: 0,
+                  }}
+                >
+                  {b.sub}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -221,32 +387,24 @@ export default function Benefits() {
         <div
           className="reveal"
           style={{
-            marginTop: "48px",
             background: "#1A1A18",
             borderRadius: "24px",
-            padding: "36px 40px",
+            padding: "32px 28px",
             display: "flex",
             flexWrap: "wrap",
-            gap: "0",
+            gap: "20px",
             justifyContent: "space-around",
             alignItems: "center",
+            marginBottom: "28px",
           }}
         >
           {[
-            { val: "5B+", label: "CFU Probiotics", color: "#8AAB7E" },
+            { val: "2B+", label: "CFU Probiotics", color: "#8AAB7E" },
             { val: "0g", label: "Added Sugar", color: "#C8956E" },
-            { val: "100%", label: "Natural", color: "#8AAB7E" },
-            { val: "30s", label: "To Prepare", color: "#C8956E" },
+            { val: "100%", label: "Natural Ingredients", color: "#8AAB7E" },
+            { val: "30 sec", label: "Daily Ritual", color: "#C8956E" },
           ].map((s, i) => (
-            <div
-              key={i}
-              style={{
-                textAlign: "center",
-                padding: "8px 24px",
-                borderRight:
-                  i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
-              }}
-            >
+            <div key={i} style={{ textAlign: "center" }}>
               <p
                 style={{
                   fontFamily: "'Cormorant Garamond',serif",
@@ -264,7 +422,7 @@ export default function Benefits() {
                   fontSize: "10px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.35)",
+                  color: "rgba(255,255,255,0.3)",
                   margin: 0,
                 }}
               >
@@ -273,6 +431,40 @@ export default function Benefits() {
             </div>
           ))}
         </div>
+
+        {/* Mid-page CTA */}
+        {onCtaClick && (
+          <div className="reveal" style={{ textAlign: "center" }}>
+            <button
+              onClick={onCtaClick}
+              style={{
+                fontFamily: "'DM Sans',sans-serif",
+                fontSize: "15px",
+                fontWeight: 600,
+                color: "#FAF8F4",
+                background: "linear-gradient(135deg, #4A7A3A 0%, #2E4D24 100%)",
+                border: "none",
+                padding: "16px 36px",
+                borderRadius: "100px",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                boxShadow: "0 8px 28px rgba(74,122,58,0.3)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow =
+                  "0 16px 40px rgba(74,122,58,0.45)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 28px rgba(74,122,58,0.3)";
+              }}
+            >
+              🌿 Try Yeni Free — All 3 Flavours Included
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

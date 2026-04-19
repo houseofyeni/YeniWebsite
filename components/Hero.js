@@ -18,7 +18,7 @@ const FLAVOURS = [
     accent: "#4A7A3A",
     emoji: "🍋",
     tag: "4–7 PM",
-    desc: "Bright citrus, warming ginger, sacred tulsi. Your gut's favourite daily ritual.",
+    desc: "Bright citrus, warming ginger, sacred tulsi. A zingy daily gut ritual.",
     image: "/hero-lemon.png",
   },
   {
@@ -38,7 +38,7 @@ const FLAVOURS = [
     accent: "#6B35B0",
     emoji: "🫐",
     tag: "9–11 PM",
-    desc: "Mixed berry, lemonade fizz. The one everyone in your house tries to steal.",
+    desc: "Mixed berry, lemonade fizz. The one everyone at home tries to steal.",
     image: "/hero-berry.png",
   },
 ];
@@ -138,15 +138,16 @@ export default function Hero({ onCtaClick }) {
                 ...(mounted ? fadeUp(160) : { opacity: 0 }),
               }}
             >
-              Bloated Again?
+              Still Feeling Heavy
               <br />
               <em
                 className="italic"
                 style={{ color: f.accent, transition: "color 0.5s ease" }}
               >
-                Your Gut Needs
+                After Every Meal?
               </em>
-              <br />a Daily Reset.
+              <br />
+              There&apos;s a Fix.
             </h1>
 
             {/* Sub */}
@@ -157,8 +158,8 @@ export default function Hero({ onCtaClick }) {
                 ...(mounted ? fadeUp(260) : { opacity: 0 }),
               }}
             >
-              Kokum, jeera & live probiotics — in one sachet. Mix in water.
-              Drink in 30 seconds. Your gut, finally working.
+              Kokum, jeera & live probiotics — in one sachet. Tear. Mix. Drink
+              in 30 seconds. Gut health, made simple.
             </p>
 
             {/* Brand stamp */}
@@ -169,7 +170,7 @@ export default function Hero({ onCtaClick }) {
                 ...(mounted ? fadeUp(300) : { opacity: 0 }),
               }}
             >
-              Built for Indian meals. Made for how we actually eat.
+              Built for Indian meals. No fillers. Only real ingredients.
             </p>
 
             {/* CTAs */}
@@ -218,7 +219,7 @@ export default function Hero({ onCtaClick }) {
                 ...(mounted ? fadeUp(400) : { opacity: 0 }),
               }}
             >
-              🌿 No sugar · No pills · Results in 7 days
+              🌿 No sugar · No fillers · Results in 7 days
             </p>
 
             {/* Social proof */}
@@ -242,7 +243,7 @@ export default function Hero({ onCtaClick }) {
               </div>
               <div>
                 <p className="font-body text-sm font-medium text-charcoal">
-                  1,200+ on the waitlist
+                  1,200+ already on the waitlist
                 </p>
                 <p
                   className="font-mono text-xs mt-0.5"

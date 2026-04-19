@@ -7,7 +7,7 @@ const flavours = [
     id: 1,
     name: "Lemon + Ginger + Tulsi",
     tagline: "The Wind-Down",
-    desc: "Bright lemon, warming ginger, and sacred tulsi — a zingy reset that preps your gut for deep sleep. Inspired by your dadi's kitchen wisdom, upgraded for your evening.",
+    desc: "Bright lemon, warming ginger, and sacred tulsi — a zingy reset that preps the gut for deep sleep. Inspired by dadi's kitchen wisdom, upgraded for the modern evening.",
     notes: ["Citrus Forward", "Warming Finish", "Herbal Depth"],
     emoji: "🍋",
     bg: "#E6F0DC",
@@ -21,7 +21,7 @@ const flavours = [
     id: 2,
     name: "Kokum + Jeera",
     tagline: "After Dinner",
-    desc: "Tangy kokum from the Konkan coast paired with digestive jeera. The classic Indian post-meal ritual — now in a sachet you can take anywhere.",
+    desc: "Tangy kokum from the Konkan coast paired with digestive jeera. The classic Indian post-meal ritual — now in a sachet that goes anywhere.",
     notes: ["Tangy & Tart", "Earthy Warmth", "Digestive Boost"],
     emoji: "🌿",
     bg: "#F5EAE0",
@@ -35,7 +35,7 @@ const flavours = [
     id: 3,
     name: "Berry Lemonade",
     tagline: "Evening Sipper",
-    desc: "A burst of mixed berries with a lemonade fizz — refreshing, fruity, and universally loved. The one everyone in your house will try to steal.",
+    desc: "A burst of mixed berries with a lemonade fizz — refreshing, fruity, and universally loved. The one everyone at home tries to steal.",
     notes: ["Sweet & Bright", "Berry Burst", "Refreshing"],
     emoji: "🫐",
     bg: "#EBE0F5",
@@ -131,7 +131,7 @@ export default function Flavours() {
               margin: 0,
             }}
           >
-            Find your evening{" "}
+            Find the evening{" "}
             <em
               style={{
                 fontStyle: "italic",
@@ -311,8 +311,9 @@ export default function Flavours() {
                     letterSpacing: "0.08em",
                     padding: "6px 14px",
                     borderRadius: "100px",
-                    border: `1px solid ${f.accent}50`,
-                    color: f.accent,
+                    background: "rgba(255,255,255,0.12)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    color: "rgba(255,255,255,0.85)",
                   }}
                 >
                   {n}
@@ -368,7 +369,7 @@ export default function Flavours() {
             letterSpacing: "0.08em",
           }}
         >
-          Free sample kit includes all 3 flavours — find your favourite.
+          Free sample kit includes all 3 flavours — find a favourite.
         </p>
       </div>
     </section>

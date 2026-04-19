@@ -60,7 +60,10 @@ export function useKitsCount() {
             }, 2000);
             return prev; // hold display during restock
           }
-          const next = prev - 1;
+          // Decrement by a random amount — feels live and urgent
+          const drops = [1, 2, 3, 5, 7, 10, 12, 15, 20, 25, 30];
+          const drop = drops[Math.floor(Math.random() * drops.length)];
+          const next = Math.max(prev - drop, LOW_THRESHOLD);
           saveSession(next);
           tick(next);
           return next;

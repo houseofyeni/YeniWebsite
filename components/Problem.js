@@ -5,27 +5,27 @@ const problems = [
   {
     icon: "😮‍💨",
     title: "The 3 PM Bloat",
-    desc: "Normal lunch. Stomach like a balloon. No more unbuttoning your jeans after lunch.",
+    desc: "Normal lunch. Stomach like a balloon. Jeans feeling tight by 3 PM. Every day.",
   },
   {
     icon: "💊",
     title: "The Antacid Habit",
-    desc: "You've eaten more antacids than actual desserts. Your gut needs a fix, not a band-aid.",
+    desc: "More antacids than actual desserts. The gut needs a fix — not a band-aid.",
   },
   {
     icon: "😴",
     title: "The Afternoon Crash",
-    desc: "It's not laziness. It's your gut failing you. No more sitting through meetings feeling heavy.",
+    desc: "Not laziness. The gut struggling after a heavy meal. Energy gone by 2 PM.",
   },
   {
     icon: "☕",
     title: "Chai on Empty",
-    desc: "You know the consequence. You do it anyway. Then you spend two hours paying for it.",
+    desc: "Known consequence. Done anyway. Two hours of regret every single morning.",
   },
   {
     icon: "🔄",
     title: "The Broken Loop",
-    desc: "Jeera water for 3 days. Then nothing. Repeat. The routine didn't fit your life — that's a product problem.",
+    desc: "Jeera water for 3 days. Then nothing. Repeat. The routine fails — not the person.",
   },
 ];
 
@@ -68,10 +68,10 @@ export default function Problem() {
               marginBottom: "16px",
             }}
           >
-            You&apos;re not eating badly.
+            Not bad eating habits.
             <br />
             <em style={{ fontStyle: "italic", color: "#B07040" }}>
-              Your gut just can&apos;t keep up.
+              Just a gut that can&apos;t keep up.
             </em>
           </h2>
           <p
@@ -83,12 +83,12 @@ export default function Problem() {
               maxWidth: "480px",
             }}
           >
-            Most gut problems aren&apos;t about what you eat. They&apos;re about
-            what your gut can&apos;t process fast enough.
+            Most gut problems aren&apos;t about what goes in. They&apos;re about
+            what the gut can&apos;t process fast enough.
           </p>
         </div>
 
-        {/* Problem cards — mobile scroll, desktop grid */}
+        {/* Problem cards */}
         <div
           style={{
             display: "grid",
@@ -111,7 +111,7 @@ export default function Problem() {
                 transition: "all 0.25s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#C8956E30";
+                e.currentTarget.style.borderColor = "#C8956E40";
                 e.currentTarget.style.transform = "translateX(4px)";
               }}
               onMouseLeave={(e) => {
@@ -152,34 +152,47 @@ export default function Problem() {
           ))}
         </div>
 
-        {/* Bridge */}
+        {/* Solution bridge — redesigned, no arrow */}
         <div
           className="reveal"
           style={{
-            marginTop: "40px",
+            marginTop: "44px",
             display: "flex",
             alignItems: "center",
-            gap: "12px",
+            gap: "0",
           }}
         >
           <div
             style={{
               flex: 1,
               height: "1px",
-              background: "linear-gradient(90deg, #C8D7C0, transparent)",
+              background:
+                "linear-gradient(90deg, transparent, #C8D7C0 60%, transparent)",
             }}
           />
-          <span
+          <div
             style={{
+              margin: "0 20px",
               fontFamily: "'DM Mono',monospace",
               fontSize: "10px",
-              color: "#8AAB7E",
-              letterSpacing: "0.12em",
+              letterSpacing: "0.14em",
+              color: "#FAF8F4",
+              background: "#4A7A3A",
+              padding: "8px 20px",
+              borderRadius: "100px",
               whiteSpace: "nowrap",
             }}
           >
-            ENTER YENI →
-          </span>
+            MEET YENI
+          </div>
+          <div
+            style={{
+              flex: 1,
+              height: "1px",
+              background:
+                "linear-gradient(90deg, transparent, #C8D7C0 60%, transparent)",
+            }}
+          />
         </div>
       </div>
     </section>

@@ -4,67 +4,67 @@ import { useReveal } from "./useReveal";
 const benefits = [
   {
     icon: "⚡",
-    label: "Lighter after meals.",
-    sub: "In 30 minutes.",
+    num: "01",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    num: "01",
+    timeframe: "In 30 minutes",
+    label: "Feel lighter after meals.",
   },
   {
     icon: "📉",
-    label: "Bloating down.",
-    sub: "By day 5.",
+    num: "02",
     accent: "#B07040",
     bg: "#F5EAE0",
-    num: "02",
+    timeframe: "By day 5",
+    label: "Bloating noticeably down.",
   },
   {
     icon: "🔥",
-    label: "Less acidity.",
-    sub: "Without antacids.",
+    num: "03",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    num: "03",
+    timeframe: "In 7 days",
+    label: "Less acidity. Without antacids.",
   },
   {
     icon: "💨",
-    label: "Less gas.",
-    sub: "Less discomfort. Daily.",
+    num: "04",
     accent: "#B07040",
     bg: "#F5EAE0",
-    num: "04",
+    timeframe: "In 30 seconds",
+    label: "Gut reset. Done for the day.",
   },
   {
     icon: "🔋",
-    label: "No afternoon crash.",
-    sub: "Real energy post-lunch.",
+    num: "05",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    num: "05",
+    timeframe: "By day 3",
+    label: "No afternoon crash.",
   },
   {
     icon: "😴",
-    label: "Fall asleep easy.",
-    sub: "Without gut discomfort.",
+    num: "06",
     accent: "#B07040",
     bg: "#F5EAE0",
-    num: "06",
+    timeframe: "From night 1",
+    label: "Fall asleep without gut discomfort.",
   },
   {
     icon: "🔄",
-    label: "Digestion on track.",
-    sub: "Even on bad eating days.",
+    num: "07",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    num: "07",
+    timeframe: "In 2 weeks",
+    label: "Digestion becomes clockwork.",
   },
   {
     icon: "🌿",
-    label: "30-second habit.",
-    sub: "You'll actually keep.",
+    num: "08",
     accent: "#B07040",
     bg: "#F5EAE0",
-    num: "08",
+    timeframe: "Every day",
+    label: "A habit that actually sticks.",
   },
 ];
 
@@ -82,45 +82,9 @@ export default function Benefits({ onCtaClick }) {
         overflow: "hidden",
       }}
     >
-      {/* Subtle botanical bg */}
-      <svg
-        style={{
-          position: "absolute",
-          right: "-80px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          opacity: 0.03,
-          pointerEvents: "none",
-        }}
-        width="500"
-        height="500"
-        viewBox="0 0 500 500"
-      >
-        <circle
-          cx="250"
-          cy="250"
-          r="240"
-          stroke="#4A7A3A"
-          strokeWidth="1"
-          fill="none"
-          strokeDasharray="12 6"
-        />
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
-          <ellipse
-            key={i}
-            cx="250"
-            cy="18"
-            rx="14"
-            ry="32"
-            fill="#4A7A3A"
-            transform={`rotate(${deg} 250 250)`}
-          />
-        ))}
-      </svg>
-
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 20px" }}>
         {/* Header */}
-        <div className="reveal" style={{ marginBottom: "60px" }}>
+        <div className="reveal" style={{ marginBottom: "56px" }}>
           <span
             style={{
               fontFamily: "'DM Mono',monospace",
@@ -154,10 +118,10 @@ export default function Benefits({ onCtaClick }) {
                 margin: 0,
               }}
             >
-              You'll feel like you —
+              Real outcomes.
               <br />
               <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
-                without the gut problem.
+                Not wellness poetry.
               </em>
             </h2>
             <p
@@ -170,38 +134,38 @@ export default function Benefits({ onCtaClick }) {
                 margin: 0,
               }}
             >
-              Real outcomes. Not wellness poetry. Each benefit tied to what your
-              gut actually does.
+              Each benefit tied to what the gut actually does — not vague
+              claims.
             </p>
           </div>
         </div>
 
-        {/* Benefits — large featured cards */}
+        {/* Unified 8-card grid — same design for all */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "16px",
-            marginBottom: "16px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "14px",
+            marginBottom: "40px",
           }}
         >
-          {benefits.slice(0, 4).map((b, i) => (
+          {benefits.map((b, i) => (
             <div
               key={i}
-              className={`reveal reveal-delay-${i + 1}`}
+              className={`reveal reveal-delay-${(i % 4) + 1}`}
               style={{
                 background: "#fff",
-                borderRadius: "28px",
-                padding: "36px 32px",
+                borderRadius: "24px",
+                padding: "28px 24px",
                 border: "1px solid #F0EDE8",
                 position: "relative",
                 overflow: "hidden",
-                transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)",
+                transition: "all 0.32s cubic-bezier(0.22,1,0.36,1)",
                 cursor: "default",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow = `0 24px 56px ${b.accent}15`;
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.boxShadow = `0 20px 48px ${b.accent}14`;
                 e.currentTarget.style.borderColor = `${b.accent}30`;
               }}
               onMouseLeave={(e) => {
@@ -210,83 +174,7 @@ export default function Benefits({ onCtaClick }) {
                 e.currentTarget.style.borderColor = "#F0EDE8";
               }}
             >
-              {/* Ghost number */}
-              <span
-                style={{
-                  position: "absolute",
-                  top: "-8px",
-                  right: "20px",
-                  fontFamily: "'Cormorant Garamond',serif",
-                  fontSize: "120px",
-                  fontWeight: 700,
-                  color: `${b.accent}07`,
-                  lineHeight: 1,
-                  pointerEvents: "none",
-                  userSelect: "none",
-                }}
-              >
-                {b.num}
-              </span>
-
-              {/* Icon circle */}
-              <div
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  borderRadius: "20px",
-                  background: b.bg,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "28px",
-                  marginBottom: "24px",
-                  boxShadow: `0 4px 16px ${b.accent}15`,
-                }}
-              >
-                {b.icon}
-              </div>
-
-              {/* Number label */}
-              <span
-                style={{
-                  fontFamily: "'DM Mono',monospace",
-                  fontSize: "10px",
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  color: `${b.accent}80`,
-                  display: "block",
-                  marginBottom: "8px",
-                }}
-              >
-                {b.num}
-              </span>
-
-              {/* Benefit text */}
-              <h3
-                style={{
-                  fontFamily: "'Cormorant Garamond',serif",
-                  fontSize: "1.9rem",
-                  fontWeight: 500,
-                  color: "#1A1A18",
-                  margin: "0 0 6px",
-                  lineHeight: 1.1,
-                }}
-              >
-                {b.label}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "'DM Sans',sans-serif",
-                  fontSize: "14px",
-                  color: b.accent,
-                  margin: 0,
-                  fontWeight: 500,
-                }}
-              >
-                {b.sub}
-              </p>
-
-              {/* Accent bottom bar */}
+              {/* Bottom accent bar */}
               <div
                 style={{
                   position: "absolute",
@@ -294,91 +182,64 @@ export default function Benefits({ onCtaClick }) {
                   left: 0,
                   right: 0,
                   height: "3px",
-                  background: `linear-gradient(90deg, ${b.accent}40, ${b.accent}15, transparent)`,
-                  borderRadius: "0 0 28px 28px",
+                  background: `linear-gradient(90deg, ${b.accent}, ${b.accent}20, transparent)`,
+                  borderRadius: "0 0 24px 24px",
                 }}
               />
-            </div>
-          ))}
-        </div>
 
-        {/* Second row — compact horizontal cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "12px",
-            marginBottom: "40px",
-          }}
-        >
-          {benefits.slice(4).map((b, i) => (
-            <div
-              key={i}
-              className={`reveal reveal-delay-${i + 1}`}
-              style={{
-                background: b.bg,
-                borderRadius: "20px",
-                padding: "24px 22px",
-                border: `1px solid ${b.accent}15`,
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-                transition: "all 0.3s ease",
-                cursor: "default",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = `0 16px 40px ${b.accent}18`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
-            >
+              {/* Icon + accent circle */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
+                  marginBottom: "20px",
                 }}
               >
-                <span style={{ fontSize: "26px" }}>{b.icon}</span>
-                <span
+                <div
                   style={{
-                    fontFamily: "'DM Mono',monospace",
-                    fontSize: "10px",
-                    color: `${b.accent}60`,
-                    letterSpacing: "0.1em",
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "16px",
+                    background: b.bg,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "22px",
                   }}
                 >
-                  {b.num}
-                </span>
+                  {b.icon}
+                </div>
               </div>
 
-              <div>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans',sans-serif",
-                    fontSize: "15px",
-                    fontWeight: 700,
-                    color: b.accent,
-                    margin: "0 0 3px",
-                    lineHeight: 1.2,
-                  }}
-                >
-                  {b.label}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans',sans-serif",
-                    fontSize: "12px",
-                    color: "#5A534A",
-                    margin: 0,
-                  }}
-                >
-                  {b.sub}
-                </p>
-              </div>
+              {/* Timeframe — the hero number */}
+              <p
+                style={{
+                  fontFamily: "'DM Mono',monospace",
+                  fontSize: "20px",
+                  fontWeight: 700,
+                  color: b.accent,
+                  margin: "0 0 8px",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1,
+                }}
+              >
+                {b.timeframe}
+              </p>
+
+              {/* Benefit label */}
+              <p
+                style={{
+                  fontFamily: "'DM Sans',sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  color: "#5A534A",
+                  margin: 0,
+                  lineHeight: 1.5,
+                }}
+              >
+                {b.label}
+              </p>
             </div>
           ))}
         </div>
@@ -401,7 +262,7 @@ export default function Benefits({ onCtaClick }) {
           {[
             { val: "2B+", label: "CFU Probiotics", color: "#8AAB7E" },
             { val: "0g", label: "Added Sugar", color: "#C8956E" },
-            { val: "100%", label: "Natural Ingredients", color: "#8AAB7E" },
+            { val: "100%", label: "Real Ingredients", color: "#8AAB7E" },
             { val: "30 sec", label: "Daily Ritual", color: "#C8956E" },
           ].map((s, i) => (
             <div key={i} style={{ textAlign: "center" }}>
@@ -432,7 +293,7 @@ export default function Benefits({ onCtaClick }) {
           ))}
         </div>
 
-        {/* Mid-page CTA */}
+        {/* CTA */}
         {onCtaClick && (
           <div className="reveal" style={{ textAlign: "center" }}>
             <button

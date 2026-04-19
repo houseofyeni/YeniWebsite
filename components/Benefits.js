@@ -4,63 +4,55 @@ import { useReveal } from "./useReveal";
 const benefits = [
   {
     icon: "⚡",
-    num: "01",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    timeframe: "In 30 minutes",
+    timeframe: "30 min",
     label: "Feel lighter after meals.",
   },
   {
     icon: "📉",
-    num: "02",
     accent: "#B07040",
     bg: "#F5EAE0",
-    timeframe: "By day 5",
+    timeframe: "Day 5",
     label: "Bloating noticeably down.",
   },
   {
     icon: "🔥",
-    num: "03",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    timeframe: "In 7 days",
-    label: "Less acidity. Without antacids.",
+    timeframe: "7 days",
+    label: "Less acidity. No antacids.",
   },
   {
-    icon: "💨",
-    num: "04",
+    icon: "⏱️",
     accent: "#B07040",
     bg: "#F5EAE0",
-    timeframe: "In 30 seconds",
-    label: "Gut reset. Done for the day.",
+    timeframe: "30 sec",
+    label: "Complete gut reset. Daily.",
   },
   {
     icon: "🔋",
-    num: "05",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    timeframe: "By day 3",
-    label: "No afternoon crash.",
+    timeframe: "Day 3",
+    label: "No afternoon energy crash.",
   },
   {
     icon: "😴",
-    num: "06",
     accent: "#B07040",
     bg: "#F5EAE0",
-    timeframe: "From night 1",
-    label: "Fall asleep without gut discomfort.",
+    timeframe: "Night 1",
+    label: "Sleep without gut discomfort.",
   },
   {
     icon: "🔄",
-    num: "07",
     accent: "#4A7A3A",
     bg: "#E6F0DC",
-    timeframe: "In 2 weeks",
+    timeframe: "2 weeks",
     label: "Digestion becomes clockwork.",
   },
   {
     icon: "🌿",
-    num: "08",
     accent: "#B07040",
     bg: "#F5EAE0",
     timeframe: "Every day",
@@ -96,51 +88,27 @@ export default function Benefits({ onCtaClick }) {
               marginBottom: "16px",
             }}
           >
-            What Changes. Fast.
+            What Changes. How Fast.
           </span>
-          <div
+          <h2
             style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              gap: "20px",
+              fontFamily: "'Cormorant Garamond',serif",
+              fontSize: "clamp(2.2rem,5vw,4rem)",
+              fontWeight: 300,
+              color: "#1A1A18",
+              lineHeight: 1.05,
+              letterSpacing: "-0.025em",
             }}
           >
-            <h2
-              style={{
-                fontFamily: "'Cormorant Garamond',serif",
-                fontSize: "clamp(2.2rem,5vw,4rem)",
-                fontWeight: 300,
-                color: "#1A1A18",
-                lineHeight: 1.05,
-                letterSpacing: "-0.025em",
-                margin: 0,
-              }}
-            >
-              Real outcomes.
-              <br />
-              <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
-                Not wellness poetry.
-              </em>
-            </h2>
-            <p
-              style={{
-                fontFamily: "'DM Sans',sans-serif",
-                fontSize: "14px",
-                color: "#5A534A",
-                maxWidth: "260px",
-                lineHeight: 1.6,
-                margin: 0,
-              }}
-            >
-              Each benefit tied to what the gut actually does — not vague
-              claims.
-            </p>
-          </div>
+            Real outcomes.
+            <br />
+            <em style={{ fontStyle: "italic", color: "#4A7A3A" }}>
+              Not wellness poetry.
+            </em>
+          </h2>
         </div>
 
-        {/* Unified 8-card grid — same design for all */}
+        {/* 8-card grid */}
         <div
           style={{
             display: "grid",
@@ -187,53 +155,45 @@ export default function Benefits({ onCtaClick }) {
                 }}
               />
 
-              {/* Icon + accent circle */}
+              {/* Icon */}
               <div
                 style={{
+                  width: "44px",
+                  height: "44px",
+                  borderRadius: "14px",
+                  background: b.bg,
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "space-between",
+                  justifyContent: "center",
+                  fontSize: "20px",
                   marginBottom: "20px",
                 }}
               >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "16px",
-                    background: b.bg,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "22px",
-                  }}
-                >
-                  {b.icon}
-                </div>
+                {b.icon}
               </div>
 
-              {/* Timeframe — the hero number */}
+              {/* THE NUMBER — absolute hero */}
               <p
                 style={{
-                  fontFamily: "'DM Mono',monospace",
-                  fontSize: "20px",
-                  fontWeight: 700,
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "clamp(2rem, 4vw, 2.6rem)",
+                  fontWeight: 800,
                   color: b.accent,
                   margin: "0 0 8px",
-                  letterSpacing: "-0.01em",
                   lineHeight: 1,
+                  letterSpacing: "-0.04em",
                 }}
               >
                 {b.timeframe}
               </p>
 
-              {/* Benefit label */}
+              {/* Label — supporting */}
               <p
                 style={{
-                  fontFamily: "'DM Sans',sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  color: "#5A534A",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "13px",
+                  fontWeight: 400,
+                  color: "#7A736C",
                   margin: 0,
                   lineHeight: 1.5,
                 }}

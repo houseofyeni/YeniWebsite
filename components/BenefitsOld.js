@@ -3,84 +3,62 @@ import { useReveal } from "./useReveal";
 
 const benefits = [
   {
-    num: "30",
-    unit: "min",
-    arrow: true,
+    icon: "⚡",
     accent: "#4A7A3A",
-    bg: "#F0F5EC",
+    bg: "#E6F0DC",
+    timeframe: "30 min",
     label: "Feel lighter after meals.",
   },
   {
-    num: "5",
-    unit: "Days",
-    arrow: true,
+    icon: "📉",
     accent: "#B07040",
-    bg: "#F8F0EA",
+    bg: "#F5EAE0",
+    timeframe: "Day 5",
     label: "Bloating noticeably down.",
   },
   {
-    num: "7",
-    unit: "days",
-    arrow: true,
+    icon: "🔥",
     accent: "#4A7A3A",
-    bg: "#F0F5EC",
+    bg: "#E6F0DC",
+    timeframe: "7 days",
     label: "Less acidity. No antacids.",
   },
   {
-    num: "30",
-    unit: "sec",
-    arrow: true,
+    icon: "⏱️",
     accent: "#B07040",
-    bg: "#F8F0EA",
+    bg: "#F5EAE0",
+    timeframe: "30 sec",
     label: "Complete gut reset. Daily.",
   },
   {
-    num: "3",
-    unit: "Days",
-    arrow: true,
+    icon: "🔋",
     accent: "#4A7A3A",
-    bg: "#F0F5EC",
+    bg: "#E6F0DC",
+    timeframe: "Day 3",
     label: "No afternoon energy crash.",
   },
   {
-    num: "1",
-    unit: "Night",
-    arrow: true,
+    icon: "😴",
     accent: "#B07040",
-    bg: "#F8F0EA",
+    bg: "#F5EAE0",
+    timeframe: "Night 1",
     label: "Sleep without gut discomfort.",
   },
   {
-    num: "2",
-    unit: "Weeks",
-    arrow: true,
+    icon: "🔄",
     accent: "#4A7A3A",
-    bg: "#F0F5EC",
+    bg: "#E6F0DC",
+    timeframe: "2 weeks",
     label: "Digestion becomes clockwork.",
   },
   {
-    num: "Every",
-    unit: "day",
-    arrow: true,
+    icon: "🌿",
     accent: "#B07040",
-    bg: "#F8F0EA",
+    bg: "#F5EAE0",
+    timeframe: "Every day",
     label: "A habit that actually sticks.",
   },
 ];
-
-function ArrowUp({ color }) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M7 17L17 7M17 7H7M17 7V17"
-        stroke={color}
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export default function Benefits({ onCtaClick }) {
   const ref = useReveal();
@@ -130,7 +108,7 @@ export default function Benefits({ onCtaClick }) {
           </h2>
         </div>
 
-        {/* Stat cards grid */}
+        {/* 8-card grid */}
         <div
           style={{
             display: "grid",
@@ -145,81 +123,71 @@ export default function Benefits({ onCtaClick }) {
               className={`reveal reveal-delay-${(i % 4) + 1}`}
               style={{
                 background: "#fff",
-                borderRadius: "20px",
-                padding: "28px 24px 24px",
-                border: "1px solid #EDEAE5",
-                transition: "all 0.3s cubic-bezier(0.22,1,0.36,1)",
+                borderRadius: "24px",
+                padding: "28px 24px",
+                border: "1px solid #F0EDE8",
+                position: "relative",
+                overflow: "hidden",
+                transition: "all 0.32s cubic-bezier(0.22,1,0.36,1)",
                 cursor: "default",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = `0 16px 40px ${b.accent}12`;
-                e.currentTarget.style.borderColor = `${b.accent}25`;
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.boxShadow = `0 20px 48px ${b.accent}14`;
+                e.currentTarget.style.borderColor = `${b.accent}30`;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
-                e.currentTarget.style.borderColor = "#EDEAE5";
+                e.currentTarget.style.borderColor = "#F0EDE8";
               }}
             >
-              {/* Big number row */}
+              {/* Bottom accent bar */}
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "6px",
-                  marginBottom: "20px",
-                }}
-              >
-                {/* Main number */}
-                <span
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "clamp(2.8rem, 5vw, 3.6rem)",
-                    fontWeight: 800,
-                    color: b.accent,
-                    lineHeight: 1,
-                    letterSpacing: "-0.04em",
-                  }}
-                >
-                  {b.num}
-                </span>
-                {/* Unit + arrow stacked */}
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-start",
-                    paddingTop: "4px",
-                    gap: "2px",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                      color: b.accent,
-                      lineHeight: 1,
-                      opacity: 0.8,
-                    }}
-                  >
-                    {b.unit}
-                  </span>
-                  {b.arrow && <ArrowUp color={b.accent} />}
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div
-                style={{
-                  height: "1px",
-                  background: "#EDEAE5",
-                  marginBottom: "16px",
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "3px",
+                  background: `linear-gradient(90deg, ${b.accent}, ${b.accent}20, transparent)`,
+                  borderRadius: "0 0 24px 24px",
                 }}
               />
 
-              {/* Description */}
+              {/* Icon */}
+              <div
+                style={{
+                  width: "44px",
+                  height: "44px",
+                  borderRadius: "14px",
+                  background: b.bg,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "20px",
+                  marginBottom: "20px",
+                }}
+              >
+                {b.icon}
+              </div>
+
+              {/* THE NUMBER — absolute hero */}
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "clamp(2rem, 4vw, 2.6rem)",
+                  fontWeight: 800,
+                  color: b.accent,
+                  margin: "0 0 8px",
+                  lineHeight: 1,
+                  letterSpacing: "-0.04em",
+                }}
+              >
+                {b.timeframe}
+              </p>
+
+              {/* Label — supporting */}
               <p
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
@@ -227,7 +195,7 @@ export default function Benefits({ onCtaClick }) {
                   fontWeight: 400,
                   color: "#7A736C",
                   margin: 0,
-                  lineHeight: 1.55,
+                  lineHeight: 1.5,
                 }}
               >
                 {b.label}
